@@ -80,3 +80,50 @@ console.log(parsed);
 // formmat the path 
 const formated = path.format(parsed);
 console.log(formated);
+
+
+
+/** 
+ * ##################### OS Module ######################
+ * 
+ * */
+
+const os = require('os');
+
+const plateForm = os.platform(); // getting plateform of operating system
+console.log(plateForm);
+
+const homeDir = os.homedir(); // getting home directory of os
+console.log(homeDir);
+
+// getting host name
+const hostName = os.hostname(); // computer name
+console.log(hostName);
+
+// getting architecture
+const arch = os.arch();
+console.log(arch); // x64
+
+// getting number of cpus
+const cpus = os.cpus();
+console.log(cpus);
+
+// getting memory details RAM Detaills
+const freeMemory = os.freemem() / 1024 / 1024; // MB
+const totalMeemory = os.totalmem();
+console.log(freeMemory, totalMeemory);
+
+// Getting Netowking interface
+
+const interface = os.networkInterfaces();
+console.log(interface);
+
+// getting ip
+for (const name of Object.keys(interface)) {
+    for (const net of interface[name]) {
+      // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
+      if (net.family === 'IPv4' && !net.internal) {
+        console.log(`Your IP address: ${net.address}`);
+      }
+    }
+  }
