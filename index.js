@@ -27,6 +27,7 @@ fs.writeFile('message.txt', 'hello javascript your awesome features', (err) =>
  * 3. fs.readFile
  * 4. fs.unlink :- delete a line
  * 5. fs.rename :- rename an existing file
+ * 6. fs.mkdir / rmdir	Make or remove directory
  */
 
 // appended text to existing file
@@ -50,3 +51,32 @@ fs.unlink('test.text', (err) =>
 //         if(err) throw err;
 //         console.log('file renamed.')
 //     });
+
+/**
+ * ################### path and os modules ##################
+ */
+
+const path = require('path');
+
+// path.join() 
+
+const filePath = path.join(__dirname, 'dummyfolder', 'dummy.txt');
+console.log(filePath);
+
+const baseName = path.basename(filePath); // getting file name 
+console.log(baseName);
+
+const extensionName = path.extname(filePath); // getting entenssion of a file
+console.log(extensionName);
+
+const dirName = path.dirname(filePath); // getting  directory name of a file
+console.log(dirName);
+
+// parsing an existing dirName
+const parsed = path.parse(filePath);
+console.log(parsed);
+
+
+// formmat the path 
+const formated = path.format(parsed);
+console.log(formated);
