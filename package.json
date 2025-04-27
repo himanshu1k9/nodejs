@@ -1,0 +1,24 @@
+{
+  "name": "basicsnodejs",
+  "version": "1.0.0",
+  "description": "Learning nodejs from basics to advance",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "learning",
+    "node",
+    "js",
+    "from",
+    "basics",
+    "express",
+    "etc"
+  ],
+  "author": "himanshu",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
